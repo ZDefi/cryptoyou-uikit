@@ -2583,7 +2583,7 @@ var PancakeToggle = function (_a) {
 
 var baseColors = {
     failure: "#ED4B9E",
-    primary: "#1FC7D4",
+    primary: "#040608",
     primaryBright: "#53DEE9",
     primaryDark: "#0098A1",
     secondary: "#7645D9",
@@ -4987,7 +4987,7 @@ var BodyWrapper = styled(Box)(templateObject_3$1 || (templateObject_3$1 = __make
 var Inner = styled.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu$1 = function (_a) {
     var _b;
-    var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, children = _a.children;
+    var userMenu = _a.userMenu; _a.globalMenu; var isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, children = _a.children;
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = useState(true), showMenu = _c[0], setShowMenu = _c[1];
     var refPrevOffset = useRef(window.pageYOffset);
@@ -5033,8 +5033,6 @@ var Menu$1 = function (_a) {
                     React__default.createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }))),
                 React__default.createElement(Box, { mt: "4px" },
                     React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "textSubtle", hideLanguage: true })),
-                globalMenu,
-                " ",
                 userMenu)),
         subLinks && (React__default.createElement(Flex, { justifyContent: "space-around" },
             React__default.createElement(SubMenuItems, { items: subLinksWithoutMobile, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem }),
