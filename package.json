@@ -21,7 +21,11 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "test": "jest",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "npm:publish:deploy": "npm publish",
+    "npm:version:patch ": "npm version minor",
+    "npm:version:minor": "npm version minor",
+    "npm:version:major": "npm version major"
   },
   "jest": {
     "setupFilesAfterEnv": [
