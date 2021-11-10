@@ -1,14 +1,16 @@
 {
-  "name": "@pancakeswap/uikit",
-  "version": "0.56.0",
-  "description": "Set of UI components for pancake projects",
+  "name": "@cryptoyou/uikit",
+  "version": "0.0.1",
+  "author": "zdefi",
+  "keywords": [],
+  "description": "Set of UI components for cryptoyou projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit",
+  "repository": "https://github.com/ZDefi/cryptoyou-uikit.git",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
