@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { FooterLinkType } from "../../components/Footer/types";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems/types";
 import { Colors } from "../../theme/types";
@@ -20,7 +19,6 @@ export interface NavProps {
   globalMenu?: ReactElement;
   links: Array<MenuItemsType>;
   subLinks: Array<SubMenuItemsType>;
-  footerLinks: Array<FooterLinkType>;
   activeItem: string;
   activeSubItem: string;
   isDark: boolean;
