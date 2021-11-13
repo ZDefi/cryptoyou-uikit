@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Flex from "../../../components/Box/Flex";
-import logoImg from './logoImg.png';
+import logoImg from './logo.png';
 
 interface Props {
   isDark: boolean;
