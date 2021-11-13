@@ -713,7 +713,7 @@ var Logo$2 = function (_a) {
         React__default["default"].createElement("path", { className: "left-eye", d: "M9.11817 15.2485C9.11817 16.2833 8.55896 17.1221 7.86914 17.1221C7.17932 17.1221 6.62012 16.2833 6.62012 15.2485C6.62012 14.2138 7.17932 13.375 7.86914 13.375C8.55896 13.375 9.11817 14.2138 9.11817 15.2485Z", fill: "#633001" }),
         React__default["default"].createElement("path", { className: "right-eye", d: "M17.7363 15.2485C17.7363 16.2833 17.1771 17.1221 16.4873 17.1221C15.7975 17.1221 15.2383 16.2833 15.2383 15.2485C15.2383 14.2138 15.7975 13.375 16.4873 13.375C17.1771 13.375 17.7363 14.2138 17.7363 15.2485Z", fill: "#633001" })));
 };
-var LogoWithTextIcon = React__default["default"].memo(Logo$2, function (prev, next) { return prev.isDark === next.isDark; });
+var LogoWithText = React__default["default"].memo(Logo$2, function (prev, next) { return prev.isDark === next.isDark; });
 
 var Icon$1n = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 512 512" }, props),
@@ -1524,7 +1524,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     ListViewIcon: Icon$1q,
     LoginIcon: Icon$1p,
     LogoIcon: Icon$1o,
-    LogoWithTextIcon: LogoWithTextIcon,
+    LogoWithTextIcon: LogoWithText,
     LogoRoundIcon: Icon$1n,
     MathWalletIcon: Icon$1m,
     LogoutIcon: Icon$1l,
@@ -2639,7 +2639,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
         orange: "linear-gradient(180deg, #FE993B 0%, #FFC85D 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#FFB751", background: "#1D2633", backgroundDisabled: "#3c3742", backgroundAlt: "#1D2633", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383241", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#372F47", inputSecondary: "#262130", primaryDark: "#0098A1", tertiary: "#353547", text: "#F4EEFF", textDisabled: "#666171", textSubtle: "#B8BECC", disabled: "#524B63", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#FFB751", background: "#131922", backgroundDisabled: "#3c3742", backgroundAlt: "#1D2633", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#040608", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#372F47", inputSecondary: "#262130", primaryDark: "#0098A1", tertiary: "#353547", text: "#F4EEFF", textDisabled: "#666171", textSubtle: "#B8BECC", disabled: "#524B63", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #3D2A54 0%, #313D5C 100%)",
         cardHeader: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
@@ -4651,21 +4651,21 @@ var BottomNav = function (_a) {
         }))));
 };
 
-var StyledFooter = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 50px;\n  padding-top: 70px;\n\n  ", " {\n    padding-bottom: 34px;\n    padding-top: 29px;\n  };\n"], ["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 50px;\n  padding-top: 70px;\n\n  ", " {\n    padding-bottom: 34px;\n    padding-top: 29px;\n  };\n"])), darkColors.backgroundAlt, function (_a) {
+var StyledFooter = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"], ["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"])), darkColors.backgroundAlt, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledIncubatedBy = styled__default["default"].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 57px;\n  };\n"], ["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 57px;\n  };\n"])), function (_a) {
+var StyledIncubatedBy = styled__default["default"].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 49px;\n  };\n"], ["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 49px;\n  };\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
 var templateObject_1$a, templateObject_2$6;
 
+// import babyswap from './babyswap.png';
 var MenuItem = function () {
     return (React__default["default"].createElement(StyledFooter, null,
         React__default["default"].createElement(StyledIncubatedBy, null,
-            React__default["default"].createElement(Text, { fontSize: "14px", color: "#FFFFFF", mr: "20px" }, "Incubated By"),
-            React__default["default"].createElement("div", { style: { width: 40, height: 40 } })),
+            React__default["default"].createElement(Text, { fontSize: "14px", color: "#FFFFFF", mr: "20px" }, "Incubated By")),
         React__default["default"].createElement("div", { style: { width: '100%', textAlign: 'center' } },
             React__default["default"].createElement(Text, { color: "#5C6577" }, "Copyright \u00A9 2021 thecryptoyou.io All Rights Reserved"))));
 };
@@ -4691,11 +4691,9 @@ var StyledLink = styled__default["default"](reactRouterDom.Link)(templateObject_
     return theme.mediaQueries.nav;
 }, blink);
 var Logo = function (_a) {
-    var isDark = _a.isDark, href = _a.href;
+    _a.isDark; var href = _a.href;
     var isAbsoluteUrl = href.startsWith("http");
-    var innerLogo = (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(Icon$1o, { className: "mobile-icon" }),
-        React__default["default"].createElement(LogoWithTextIcon, { className: "desktop-icon", isDark: isDark })));
+    var innerLogo = (React__default["default"].createElement(React__default["default"].Fragment, null, "logo"));
     return (React__default["default"].createElement(Flex, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledLink, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default["default"].createElement(StyledLink, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
 };
 var Logo$1 = React__default["default"].memo(Logo, function (prev, next) { return prev.isDark === next.isDark; });
@@ -4857,7 +4855,7 @@ var links = [
         label: "Disconnect",
     },
 ];
-var MENU_HEIGHT = 56;
+var MENU_HEIGHT = 80;
 
 var MenuButton = styled__default["default"](Button)(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n"], ["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -4878,7 +4876,7 @@ var LangSelector = function (_a) {
 var LangSelector$1 = React__default["default"].memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
 var Wrapper = styled__default["default"].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default["default"].nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: 1px solid ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: 1px solid ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"])), function (_a) {
+var StyledNav = styled__default["default"].nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: 1px solid ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 38px;\n  padding-right: 21px;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: 1px solid ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 38px;\n  padding-right: 21px;\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, MENU_HEIGHT, function (_a) {
@@ -5426,7 +5424,7 @@ exports.ListViewIcon = Icon$1q;
 exports.LoginIcon = Icon$1p;
 exports.LogoIcon = Icon$1o;
 exports.LogoRoundIcon = Icon$1n;
-exports.LogoWithTextIcon = LogoWithTextIcon;
+exports.LogoWithTextIcon = LogoWithText;
 exports.LogoutIcon = Icon$1l;
 exports.MathWalletIcon = Icon$1m;
 exports.MedalBronzeIcon = Icon$1k;

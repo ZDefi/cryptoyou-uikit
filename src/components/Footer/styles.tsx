@@ -5,12 +5,12 @@ import { Flex } from "../Box";
 export const StyledFooter = styled.div`
   background: ${darkColors.backgroundAlt};
   width: 100%;
-  padding-bottom: 50px;
-  padding-top: 70px;
+  padding-bottom: 34px;
+  padding-top: 29px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding-bottom: 34px;
-    padding-top: 29px;
+    padding-bottom: 50px;
+    padding-top: 70px;
   };
 `;
 
@@ -22,6 +22,6 @@ export const StyledIncubatedBy = styled.div`
   justify-content: center;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    margin-bottom: 57px;
+    margin-bottom: 49px;
   };
 `;
