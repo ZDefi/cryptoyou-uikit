@@ -3,7 +3,7 @@ import styled, { DefaultTheme } from "styled-components";
 import ChevronLeft from "../Svg/Icons/ChevronLeft";
 import ChevronRight from "../Svg/Icons/ChevronRight";
 import Flex from "../Box/Flex";
-import { ImageButtonSliderProps, ImageButton } from "./types";
+import { ButtonSliderProps, ListButton } from "./types";
 
 const COLORS = {
     enable: '#FFC85D',
@@ -19,7 +19,7 @@ const ImageBox = styled.img<{ vertical?: boolean, active?: boolean }>`
   cursor: pointer;
 `;
 
-const StyledImageButtonSlider = styled(Flex)<{ vertical?: boolean }>`
+const StyledButtonSlider = styled(Flex)<{ vertical?: boolean }>`
   align-items: center;
   flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
 `;
@@ -34,9 +34,17 @@ const ArrowBox = styled.div<{ vertical?: boolean, active?: boolean }>`
   cursor: pointer;
 `;
 
+const Pagination = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFC85D;
+  flex: 1;
+  text-align: center;
+`;
 
-const ImageButtonSlider: React.FC<ImageButtonSliderProps> = (props) => {
-    const { list = [], onChange, vertical , defaultIndex = 0 } = props;
+
+const ButtonSlider: React.FC<ButtonSliderProps> = (props) => {
+    const { list = [], onChange, vertical , defaultIndex = 0, type = 'common' } = props;
     const [activeIndex, setActiveIndex] = useState(defaultIndex)
     const handleLeftClick = () => {
         if (activeIndex > 0) {
@@ -60,22 +68,26 @@ const ImageButtonSlider: React.FC<ImageButtonSliderProps> = (props) => {
         }
     }
     return (
-        <StyledImageButtonSlider vertical={vertical}>
+        <StyledButtonSlider vertical={vertical}>
             <ArrowBox vertical={vertical} onClick={handleLeftClick} active={activeIndex > 0}>
                 <ChevronLeft width={50} color={ activeIndex > 0 ? COLORS.enable : COLORS.disable }/>
             </ArrowBox>
-            { list.map((item, index) => (
-                <ImageBox
-                    src={item.url}
-                    onClick={() => handleItemClick(index)}
-                    vertical={vertical}
-                    active={index === activeIndex}/>
-            ))}
+            {
+                type === 'common' ? <Pagination>{activeIndex + 1}/{list.length + 1}</Pagination> :
+                    list.map((item, index) => (
+                            <ImageBox
+                                src={item.url}
+                                onClick={() => handleItemClick(index)}
+                                vertical={vertical}
+                                active={index === activeIndex}/>
+                        ))
+            }
+
             <ArrowBox vertical={vertical} onClick={handleRightClick} active={activeIndex < list.length - 1}>
                 <ChevronRight width={50} color={ activeIndex < list.length - 1 ? COLORS.enable : COLORS.disable }/>
             </ArrowBox>
-        </StyledImageButtonSlider>
+        </StyledButtonSlider>
     );
 };
 
-export default ImageButtonSlider;
+export default ButtonSlider;
