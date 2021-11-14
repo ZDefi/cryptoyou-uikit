@@ -10,8 +10,11 @@ const MenuItem: React.FC = () => {
     <StyledFooter>
       <StyledIncubatedBy>
         <Text fontSize="14px" color="#FFFFFF" mr="20px">Incubated By</Text>
-        {/* TODO：图标还没好，先占位 */}
-        <div style={{width: 40, height: 40}}></div>
+        <img
+          src="https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/babyswap+logo+black.png"
+          alt="alt"
+          width="156px"
+        />
       </StyledIncubatedBy>
       <div style={{width: '100%', textAlign: 'center'}}>
         <Text color="#5C6577">

@@ -7,13 +7,15 @@ import { ProgressProps, variants } from "./types";
 interface BarProps {
   primary?: boolean;
   $useDark: boolean;
+  barColor?: string;
 }
 
 export const Bar = styled.div<BarProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: ${({ theme, $useDark, primary }) => {
+  background-color: ${({ theme, $useDark, primary, barColor }) => {
+    if (barColor) return barColor
     if ($useDark) return primary ? theme.colors.secondary : `${theme.colors.secondary}80`;
     return primary ? lightColors.secondary : `${lightColors.secondary}80`;
   }};
@@ -29,11 +31,15 @@ interface StyledProgressProps {
   variant: ProgressProps["variant"];
   scale: ProgressProps["scale"];
   $useDark: boolean;
+  wrapperColor?: string
 }
 
 const StyledProgress = styled.div<StyledProgressProps>`
   position: relative;
-  background-color: ${({ theme, $useDark }) => ($useDark ? theme.colors.input : lightColors.input)};
+  background-color: ${({ theme, $useDark, wrapperColor }) => {
+    if (wrapperColor) return wrapperColor
+    return ($useDark ? theme.colors.input : lightColors.input)
+  }};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   overflow: hidden;
 

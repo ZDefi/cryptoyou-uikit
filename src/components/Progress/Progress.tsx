@@ -23,16 +23,18 @@ const Progress: React.FC<ProgressProps> = ({
   secondaryStep = null,
   showProgressBunny = false,
   useDark = true,
+  wrapperColor,
+  barColor,
 }) => {
   return (
-    <StyledProgress $useDark={useDark} variant={variant} scale={scale}>
+    <StyledProgress $useDark={useDark} variant={variant} scale={scale} wrapperColor={wrapperColor}>
       {showProgressBunny && (
-        <ProgressBunnyWrapper style={{ left: `${stepGuard(primaryStep)}%` }}>
+        <ProgressBunnyWrapper style={{ left: `${stepGuard(primaryStep)}%`}}>
           <ProgressBunny />
         </ProgressBunnyWrapper>
       )}
-      <Bar $useDark={useDark} primary style={{ width: `${stepGuard(primaryStep)}%` }} />
-      {secondaryStep ? <Bar $useDark={useDark} style={{ width: `${stepGuard(secondaryStep)}%` }} /> : null}
+      <Bar $useDark={useDark} primary style={{ width: `${stepGuard(primaryStep)}%` }} barColor={barColor} />
+      {secondaryStep ? <Bar $useDark={useDark} style={{ width: `${stepGuard(secondaryStep)}%` }} barColor={barColor}/> : null}
     </StyledProgress>
   );
 };

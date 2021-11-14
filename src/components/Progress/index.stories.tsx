@@ -29,10 +29,14 @@ const DefaultTemplate: React.FC = (args) => {
           </Box>
         );
       })}
-      <Heading size="md" mb="8px">
+      <Heading size="md" mb="16px">
         Small
       </Heading>
       <Progress scale="sm" primaryStep={progress} {...args} />
+      <Heading size="md" mb="16px" mt="16px">
+        Custom Color
+      </Heading>
+      <Progress scale="sm" primaryStep={progress} {...args} wrapperColor="#090D13" barColor="#FFD69B"/>
       <div style={{ marginTop: "32px" }}>
         <Button type="button" scale="sm" onClick={handleClick}>
           Random Progress

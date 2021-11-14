@@ -34,8 +34,8 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   z-index: 20;
   transform: translate3d(0, 0, 0);
 
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 38px;
+  padding-right: 21px;
 `;
 
 const BodyWrapper = styled(Box)`

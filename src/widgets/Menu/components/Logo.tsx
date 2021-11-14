@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Flex from "../../../components/Box/Flex";
-import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 
 interface Props {
   isDark: boolean;
@@ -47,10 +46,11 @@ const StyledLink = styled(Link)`
 const Logo: React.FC<Props> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
-    <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
-    </>
+    <img
+      src="https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/TCY-logo+1.png"
+      alt="alt"
+      width="94px"
+    />
   );
 
   return (
