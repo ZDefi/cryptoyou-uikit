@@ -18,7 +18,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", acti
           return (
             showOnMobile && (
               <DropdownMenu
-                key={label}
+                key={label as string}
                 items={menuItems}
                 isBottomNav
                 activeItem={activeSubItem}

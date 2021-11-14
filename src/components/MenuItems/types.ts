@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
 
 export type MenuItemsType = {
-  label: string;
+  label: ReactNode | string;
   href: string;
   icon?: string;
   items?: DropdownMenuItems[];
