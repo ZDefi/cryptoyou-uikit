@@ -34,6 +34,7 @@ export * from "./components/Tag";
 export * from "./components/Text";
 export * from "./components/Timeline";
 export * from "./components/Toggle";
+export * from './components/ButtonSlider';
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/Menu";

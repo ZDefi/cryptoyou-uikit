@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Flex from "../../../components/Box/Flex";
-import logoImg from './logo.png';
 
 interface Props {
   isDark: boolean;
@@ -47,9 +46,11 @@ const StyledLink = styled(Link)`
 const Logo: React.FC<Props> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
-    <>
-      <img src={logoImg} alt="alt" width="94px" />
-    </>
+    <img
+      src="https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/TCY-logo+1.png"
+      alt="alt"
+      width="94px"
+    />
   );
 
   return (
