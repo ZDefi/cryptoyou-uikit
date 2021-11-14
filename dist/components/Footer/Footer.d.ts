@@ -1,4 +1,3 @@
 import React from "react";
-import { FooterProps } from "./types";
-declare const MenuItem: React.FC<FooterProps>;
+declare const MenuItem: React.FC;
 export default MenuItem;

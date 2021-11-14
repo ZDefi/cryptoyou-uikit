@@ -1,57 +1,27 @@
 import styled from "styled-components";
 import { darkColors } from "../../theme/colors";
-import { Box, Flex } from "../Box";
-import SocialLinks from "./Components/SocialLinks";
+import { Flex } from "../Box";
 
-export const StyledFooter = styled(Flex)`
+export const StyledFooter = styled.div`
   background: ${darkColors.backgroundAlt};
-`;
-
-export const StyledList = styled.ul`
-  list-style: none;
-  margin-bottom: 40px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    margin-bottom: 0px;
-  }
-`;
-
-export const StyledListItem = styled.li`
-  font-size: 16px;
-  margin-bottom: 8px;
-  text-transform: capitalize;
-
-  &:first-child {
-    color: ${darkColors.secondary};
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-`;
-
-export const StyledIconMobileContainer = styled(Box)`
-  margin-bottom: 24px;
-`;
-
-export const StyledToolsContainer = styled(Flex)`
-  border-color: ${darkColors.cardBorder};
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-style: solid;
-  padding: 24px 0;
-  margin-bottom: 24px;
+  width: 100%;
+  padding-bottom: 34px;
+  padding-top: 29px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    border-top-width: 0;
-    border-bottom-width: 0;
-    padding: 0 0;
-    margin-bottom: 0;
-  }
+    padding-bottom: 50px;
+    padding-top: 70px;
+  };
 `;
 
-export const StyledSocialLinks = styled(SocialLinks)`
-  border-bottom: 1px solid ${darkColors.cardBorder};
-`;
+export const StyledIncubatedBy = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  justify-content: center;
 
-export const StyledText = styled.span`
-  color: ${darkColors.text};
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-bottom: 49px;
+  };
 `;
