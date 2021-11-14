@@ -14,4 +14,5 @@ export interface MenuItemsProps extends BoxProps {
   items: MenuItemsType[];
   activeItem?: string;
   activeSubItem?: string;
+  variant?: "default" | "subMenu" | "header";
 }
