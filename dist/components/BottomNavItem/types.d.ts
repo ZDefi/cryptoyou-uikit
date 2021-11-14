@@ -1,5 +1,6 @@
+import { ReactNode } from 'react';
 export interface BottomNavItemProps {
-    label: string;
+    label: ReactNode | string;
     href: string;
     iconName?: string;
     isActive?: boolean;

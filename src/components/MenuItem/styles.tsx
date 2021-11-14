@@ -50,13 +50,20 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   ${({ $variant }) =>
     $variant === "default"
       ? `
-    padding: 0 16px;
-    height: 48px;
-  `
-      : `
-    padding: 4px 4px 0px 4px;
-    height: 42px;
-  `}
+        padding: 0 16px;
+        height: 48px;
+      `
+      : ($variant === 'header'
+        ? `
+          padding: 0 16px;
+          height: 78px;
+        `
+        : `
+          padding: 4px 4px 0px 4px;
+          height: 42px;
+        `
+      )
+  }
 
   &:hover {
     color: ${({ theme }) => theme.colors.secondary};

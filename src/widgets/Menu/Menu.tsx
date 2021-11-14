@@ -107,7 +107,15 @@ const Menu: React.FC<NavProps> = ({
       <StyledNav showMenu={showMenu}>
         <Flex>
           <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-          {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
+          {!isMobile && (
+            <MenuItems
+              items={links}
+              activeItem={activeItem}
+              activeSubItem={activeSubItem}
+              ml="24px"
+              variant="header"
+            />
+          )}
         </Flex>
         <Flex alignItems="center">
           {!isMobile && (
@@ -149,7 +157,7 @@ const Menu: React.FC<NavProps> = ({
           <Footer />
         </Inner>
       </BodyWrapper>
-      {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
+      {/* {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />} */}
     </Wrapper>
   );
 };
