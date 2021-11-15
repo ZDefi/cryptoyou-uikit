@@ -4486,6 +4486,63 @@ var StyledOverlay = styled.div(templateObject_2$8 || (templateObject_2$8 = __mak
 });
 var templateObject_1$b, templateObject_2$8;
 
+var BottomNav = function (_a) {
+    var _b = _a.items, items = _b === void 0 ? [] : _b, _c = _a.activeItem, activeItem = _c === void 0 ? "" : _c; _a.activeSubItem; var props = __rest(_a, ["items", "activeItem", "activeSubItem"]);
+    var _e = useState({}), menuOpenByIndex = _e[0]; _e[1];
+    var isBottomMenuOpen = Object.values(menuOpenByIndex).reduce(function (acc, value) { return acc || value; }, false);
+    return (React__default.createElement(React__default.Fragment, null,
+        isBottomMenuOpen && React__default.createElement(StyledOverlay, null),
+        React__default.createElement(StyledBottomNav, __assign({ justifyContent: "space-around" }, props), items.map(function (_a, index) {
+            var label = _a.label; _a.items; var href = _a.href, icon = _a.icon; _a.showOnMobile; var _c = _a.showItemsOnMobile, showItemsOnMobile = _c === void 0 ? true : _c;
+            return (React__default.createElement(BottomNavItem, { href: href, isActive: href === activeItem, label: label, iconName: icon, showItemsOnMobile: showItemsOnMobile }));
+            // const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
+            // return (
+            //   showOnMobile && (
+            //     <DropdownMenu
+            //       key={label as string}
+            //       items={menuItems}
+            //       isBottomNav
+            //       activeItem={activeSubItem}
+            //       showItemsOnMobile={showItemsOnMobile}
+            //       setMenuOpenByIndex={setMenuOpenByIndex}
+            //       index={index}
+            //     >
+            //       <Box>
+            //         <NotificationDot show={!!statusColor} color={statusColor}>
+            //           <BottomNavItem
+            //             href={href}
+            //             isActive={href === activeItem}
+            //             label={label}
+            //             iconName={icon}
+            //             showItemsOnMobile={showItemsOnMobile}
+            //           />
+            //         </NotificationDot>
+            //       </Box>
+            //     </DropdownMenu>
+            //   )
+            // );
+        }))));
+};
+
+var StyledFooter = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"], ["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"])), darkColors.backgroundAlt, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var StyledIncubatedBy = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 49px;\n  };\n"], ["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 49px;\n  };\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var templateObject_1$a, templateObject_2$7;
+
+var MenuItem = function () {
+    return (React__default.createElement(StyledFooter, null,
+        React__default.createElement(StyledIncubatedBy, null,
+            React__default.createElement(Text, { fontSize: "14px", color: "#FFFFFF", mr: "20px" }, "Incubated By"),
+            React__default.createElement("img", { src: "https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/babyswap+logo+black.png", alt: "alt", width: "156px" })),
+        React__default.createElement("div", { style: { width: '100%', textAlign: 'center' } },
+            React__default.createElement(Text, { color: "#5C6577" }, "Copyright \u00A9 2021 thecryptoyou.io All Rights Reserved"))));
+};
+
 var getTextColor = function (_a) {
     var $isActive = _a.$isActive, disabled = _a.disabled, theme = _a.theme;
     if (disabled)
@@ -4494,7 +4551,7 @@ var getTextColor = function (_a) {
         return theme.colors.secondary;
     return theme.colors.textSubtle;
 };
-var DropdownMenuItem = styled.button(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
+var DropdownMenuItem = styled.button(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, $isActive = _a.$isActive;
     return getTextColor({ theme: theme, disabled: disabled, $isActive: $isActive });
 }, function (_a) {
@@ -4507,7 +4564,7 @@ var DropdownMenuItem = styled.button(templateObject_1$a || (templateObject_1$a =
     var theme = _a.theme;
     return theme.colors.tertiary;
 });
-var StyledDropdownMenuItemContainer = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), DropdownMenuItem, DropdownMenuItem);
+var StyledDropdownMenuItemContainer = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), DropdownMenuItem, DropdownMenuItem);
 var DropdownMenuDivider = styled.hr(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 4px 0;\n"], ["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 4px 0;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
@@ -4536,7 +4593,7 @@ var LinkStatus = styled(Text)(templateObject_5 || (templateObject_5 = __makeTemp
     var theme = _a.theme, color = _a.color;
     return theme.colors[color];
 });
-var templateObject_1$a, templateObject_2$7, templateObject_3$2, templateObject_4$1, templateObject_5;
+var templateObject_1$9, templateObject_2$6, templateObject_3$2, templateObject_4$1, templateObject_5;
 
 var DropdownMenuItemType;
 (function (DropdownMenuItemType) {
@@ -4665,42 +4722,6 @@ var DropdownMenu = function (_a) {
                         React__default.createElement(IconComponent, { iconName: "Logout" })))),
                 type === DropdownMenuItemType.DIVIDER && React__default.createElement(DropdownMenuDivider, null)));
         })))));
-};
-
-var BottomNav = function (_a) {
-    var _b = _a.items, items = _b === void 0 ? [] : _b, _c = _a.activeItem, activeItem = _c === void 0 ? "" : _c, _d = _a.activeSubItem, activeSubItem = _d === void 0 ? "" : _d, props = __rest(_a, ["items", "activeItem", "activeSubItem"]);
-    var _e = useState({}), menuOpenByIndex = _e[0], setMenuOpenByIndex = _e[1];
-    var isBottomMenuOpen = Object.values(menuOpenByIndex).reduce(function (acc, value) { return acc || value; }, false);
-    return (React__default.createElement(React__default.Fragment, null,
-        isBottomMenuOpen && React__default.createElement(StyledOverlay, null),
-        React__default.createElement(StyledBottomNav, __assign({ justifyContent: "space-around" }, props), items.map(function (_a, index) {
-            var _b, _c;
-            var label = _a.label, menuItems = _a.items, href = _a.href, icon = _a.icon, _d = _a.showOnMobile, showOnMobile = _d === void 0 ? true : _d, _e = _a.showItemsOnMobile, showItemsOnMobile = _e === void 0 ? true : _e;
-            var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
-            return (showOnMobile && (React__default.createElement(DropdownMenu, { key: label, items: menuItems, isBottomNav: true, activeItem: activeSubItem, showItemsOnMobile: showItemsOnMobile, setMenuOpenByIndex: setMenuOpenByIndex, index: index },
-                React__default.createElement(Box, null,
-                    React__default.createElement(NotificationDot, { show: !!statusColor, color: statusColor },
-                        React__default.createElement(BottomNavItem, { href: href, isActive: href === activeItem, label: label, iconName: icon, showItemsOnMobile: showItemsOnMobile }))))));
-        }))));
-};
-
-var StyledFooter = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"], ["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"])), darkColors.backgroundAlt, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var StyledIncubatedBy = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 49px;\n  };\n"], ["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 35px;\n  justify-content: center;\n\n  ", " {\n    margin-bottom: 49px;\n  };\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var templateObject_1$9, templateObject_2$6;
-
-var MenuItem = function () {
-    return (React__default.createElement(StyledFooter, null,
-        React__default.createElement(StyledIncubatedBy, null,
-            React__default.createElement(Text, { fontSize: "14px", color: "#FFFFFF", mr: "20px" }, "Incubated By"),
-            React__default.createElement("img", { src: "https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/babyswap+logo+black.png", alt: "alt", width: "156px" })),
-        React__default.createElement("div", { style: { width: '100%', textAlign: 'center' } },
-            React__default.createElement(Text, { color: "#5C6577" }, "Copyright \u00A9 2021 thecryptoyou.io All Rights Reserved"))));
 };
 
 var MenuItems = function (_a) {
