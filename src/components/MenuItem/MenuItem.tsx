@@ -13,7 +13,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
   return (
     <StyledMenuItemContainer $isActive={isActive} $variant={variant}>
-      <StyledMenuItem as={Link} to={href} $isActive={isActive} $variant={variant} $statusColor={statusColor} {...props}>
+      <StyledMenuItem as={Link} to={href} href={href} $isActive={isActive} $variant={variant} $statusColor={statusColor} {...props}>
         {children}
       </StyledMenuItem>
     </StyledMenuItemContainer>

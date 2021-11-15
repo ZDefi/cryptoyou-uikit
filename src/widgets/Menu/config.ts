@@ -20,105 +20,31 @@ export const status = {
 
 export const links: MenuItemsType[] = [
   {
-    label: "Trade",
-    href: "/swap",
-    icon: "Swap",
-    items: [
-      {
-        label: "Exchange",
-        href: "https://exchange.pancakeswap.finance",
-      },
-      {
-        label: "Liquidity",
-        href: "https://exchange.pancakeswap.finance/#/pool",
-      },
-      {
-        label: "Charts",
-        href: "https://exchange.pancakeswap.finance/#/charts",
-        iconName: "Chart",
-        isMobileOnly: true,
-      },
-    ],
+    label: 'Home',
+    href: '/home',
+    showItemsOnMobile: false,
   },
   {
-    label: "Earn",
-    href: "/",
-    icon: "Earn",
-    items: [
-      {
-        label: "Earn",
-        href: "/",
-      },
-      {
-        label: "Yield Farms",
-        href: "/",
-      },
-      {
-        label: "Syrup pools",
-        href: "/",
-      },
-    ],
+    label: 'Game',
+    href: '/game',
   },
   {
-    label: "Win",
-    href: "/",
-    icon: "Trophy",
-    items: [
-      {
-        label: "Win",
-        href: "/",
-      },
-      {
-        label: "Predictions",
-        href: "/",
-        status: status.LIVE,
-      },
-      {
-        label: "Lottery",
-        href: "/",
-      },
-    ],
+    label: 'Market',
+    href: '/market',
   },
   {
-    label: "",
-    href: "/",
-    icon: "More",
-    items: [
-      {
-        label: "Info & Analytics",
-        href: "/",
-      },
-      {
-        label: "IFO Token Sales",
-        href: "/",
-        status: status.SOON,
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: "NFT Collectibles",
-        href: "/",
-      },
-      {
-        label: "Team Leaderboard",
-        href: "/",
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: "Blog",
-        href: "/",
-      },
-      {
-        label: "Docs & Guides",
-        href: "/",
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-    ],
+    label: 'Liquidity Mining',
+    href: 'https://exchange.babyswap.finance/#/pool',
+    as: 'a',
+    target: '_blank',
+  },
+  {
+    label: 'Game Wiki',
+    href: 'https://docs.thecryptoyou.io',
   },
 ];
+
+
 
 export const userMenulinks: DropdownMenuItems[] = [
   {
