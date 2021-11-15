@@ -28,7 +28,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", acti
     <>
       {/* {isBottomMenuOpen && <StyledOverlay />} */}
       <StyledBottomNav justifyContent="space-around" {...props}>
-        {items.map(({ label, items: menuItems, href, icon, showOnMobile = true, showItemsOnMobile = true }, index) => {
+        {items.filter(f => f.showOnMobile).map(({ label, items: menuItems, href, icon, showOnMobile = true, showItemsOnMobile = true }, index) => {
           const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
           return (
             <NavButton key={href} as={Link} to={href} isActived={href === activeItem}>{label}</NavButton>

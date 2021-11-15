@@ -22,15 +22,18 @@ export const links: MenuItemsType[] = [
   {
     label: 'Home',
     href: '/home',
+    showOnMobile: true,
     showItemsOnMobile: false,
   },
   {
     label: 'Game',
     href: '/game',
+    showOnMobile: true,
   },
   {
     label: 'Market',
     href: '/market',
+    showOnMobile: true,
   },
   {
     label: 'Liquidity Mining',
