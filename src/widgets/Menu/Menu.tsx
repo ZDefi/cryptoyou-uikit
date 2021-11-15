@@ -7,12 +7,13 @@ import Flex from "../../components/Box/Flex";
 import Footer from "../../components/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
+import Button from '../../components/Button/Button';
 import { useMatchBreakpoints } from "../../hooks";
-import CakePrice from "../../components/CakePrice/CakePrice";
+// import CakePrice from "../../components/CakePrice/CakePrice";
 import Logo from "./components/Logo";
 import { MENU_HEIGHT } from "./config";
 import { NavProps } from "./types";
-import LangSelector from "../../components/LangSelector/LangSelector";
+// import LangSelector from "../../components/LangSelector/LangSelector";
 
 const Wrapper = styled.div`
   position: relative;
@@ -119,11 +120,18 @@ const Menu: React.FC<NavProps> = ({
         </Flex>
         <Flex alignItems="center">
           {!isMobile && (
-            <Box mr="12px">
-              <CakePrice cakePriceUsd={cakePriceUsd} />
-            </Box>
+            <Button
+              as="a"
+              href="https://exchange.babyswap.finance/#/swap"
+              mr="12px"
+              variant="secondary"
+              scale="sm"
+              target="_blank"
+            >
+              Buy $BABY
+            </Button>
           )}
-          <Box mt="4px">
+          {/* <Box mt="4px">
             <LangSelector
               currentLang={currentLang}
               langs={langs}
@@ -132,7 +140,7 @@ const Menu: React.FC<NavProps> = ({
               color="textSubtle"
               hideLanguage
             />
-          </Box>
+          </Box> */}
           {/* {globalMenu}  */}
           {userMenu}
         </Flex>
@@ -157,7 +165,7 @@ const Menu: React.FC<NavProps> = ({
           <Footer />
         </Inner>
       </BodyWrapper>
-      {/* {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />} */}
+      {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
     </Wrapper>
   );
 };

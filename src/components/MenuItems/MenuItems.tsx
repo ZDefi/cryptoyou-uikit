@@ -9,7 +9,7 @@ import { MenuItemsProps } from "./types";
 const MenuItems: React.FC<MenuItemsProps> = ({ items = [], activeItem, activeSubItem, variant, ...props }) => {
   return (
     <Flex {...props}>
-      {items.map(({ label, items: menuItems = [], href, icon = "" }) => {
+      {items.map(({ label, items: menuItems = [], href, icon = "", ...itemsProps}) => {
         const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
         const isActive = activeItem === href;
         return (
@@ -20,6 +20,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({ items = [], activeItem, activeSub
               statusColor={statusColor}
               variant={variant}
               {...props}
+              {...itemsProps}
             >
               {label || <IconComponent iconName={icon} color={isActive ? "secondary" : "textSubtle"} />}
             </MenuItem>
