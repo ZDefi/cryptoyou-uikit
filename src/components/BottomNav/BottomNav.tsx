@@ -31,7 +31,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", acti
         {items.filter(f => f.showOnMobile).map(({ label, items: menuItems, href, target, icon, showOnMobile = true, showItemsOnMobile = true }, index) => {
           const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
           if (target === '_blank') {
-            return <NavButton key={href} as={Link} to={href} isActived={href === activeItem} target="_blank">{label}</NavButton>
+            return <NavButton key={href} to={href} isActived={href === activeItem} target="_blank">{label}</NavButton>
           }
           return (
             <NavButton key={href} as={Link} to={href} isActived={href === activeItem}>{label}</NavButton>

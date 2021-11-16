@@ -4441,8 +4441,11 @@ var BottomNav = function (_a) {
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(StyledBottomNav, __assign({ justifyContent: "space-around" }, props), items.filter(function (f) { return f.showOnMobile; }).map(function (_a, index) {
             var _b, _c;
-            var label = _a.label, menuItems = _a.items, href = _a.href; _a.icon; _a.showOnMobile; _a.showItemsOnMobile;
+            var label = _a.label, menuItems = _a.items, href = _a.href, target = _a.target; _a.icon; _a.showOnMobile; _a.showItemsOnMobile;
             (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
+            if (target === '_blank') {
+                return React__default.createElement(NavButton, { key: href, as: Link$1, to: href, isActived: href === activeItem, target: "_blank" }, label);
+            }
             return (React__default.createElement(NavButton, { key: href, as: Link$1, to: href, isActived: href === activeItem }, label)
             // showOnMobile && (
             //   <DropdownMenu
@@ -4730,7 +4733,6 @@ var links = [
     {
         label: 'Market',
         href: '/market',
-        showOnMobile: true,
     },
     {
         label: 'Liquidity Mining',
@@ -4741,6 +4743,9 @@ var links = [
     {
         label: 'Game Wiki',
         href: 'https://docs.thecryptoyou.io',
+        as: 'a',
+        target: '_blank',
+        showOnMobile: true,
     },
 ];
 [
