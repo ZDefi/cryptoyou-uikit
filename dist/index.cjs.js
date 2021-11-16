@@ -4471,7 +4471,7 @@ var BottomNav = function (_a) {
     var _b = _a.items, items = _b === void 0 ? [] : _b, _c = _a.activeItem, activeItem = _c === void 0 ? "" : _c; _a.activeSubItem; var props = __rest(_a, ["items", "activeItem", "activeSubItem"]);
     var _e = React.useState({}); _e[0]; _e[1];
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(StyledBottomNav, __assign({ justifyContent: "space-around" }, props), items.map(function (_a, index) {
+        React__default["default"].createElement(StyledBottomNav, __assign({ justifyContent: "space-around" }, props), items.filter(function (f) { return f.showOnMobile; }).map(function (_a, index) {
             var _b, _c;
             var label = _a.label, menuItems = _a.items, href = _a.href; _a.icon; _a.showOnMobile; _a.showItemsOnMobile;
             (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
@@ -4751,15 +4751,18 @@ var links = [
     {
         label: 'Home',
         href: '/home',
+        showOnMobile: true,
         showItemsOnMobile: false,
     },
     {
         label: 'Game',
         href: '/game',
+        showOnMobile: true,
     },
     {
         label: 'Market',
         href: '/market',
+        showOnMobile: true,
     },
     {
         label: 'Liquidity Mining',
