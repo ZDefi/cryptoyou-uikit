@@ -20,6 +20,16 @@ const NavButton = styled.a<{isActived?: boolean}>`
   /* background: ${({ isActived }) => (isActived ? '#557061' : '')}; */
 `
 
+const NavDiv = styled.div`
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  width: 100%;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: #1D2633;
+`
+
 const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", activeSubItem = "", ...props }) => {
   const [menuOpenByIndex, setMenuOpenByIndex] = useState({});
   // const isBottomMenuOpen = Object.values(menuOpenByIndex).reduce((acc, value) => acc || value, false);
@@ -31,7 +41,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", acti
         {items.filter(f => f.showOnMobile).map(({ label, items: menuItems, href, target, icon, showOnMobile = true, showItemsOnMobile = true }, index) => {
           const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
           if (target === '_blank') {
-            return <NavButton key={href} to={href} isActived={href === activeItem} target="_blank">{label}</NavButton>
+            return <NavDiv><a target="_blank" href={href}>{label}</a></NavDiv>
           }
           return (
             <NavButton key={href} as={Link} to={href} isActived={href === activeItem}>{label}</NavButton>
