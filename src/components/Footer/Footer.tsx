@@ -11,7 +11,7 @@ const MenuItem: React.FC = () => {
       <StyledIncubatedBy>
         <Text fontSize="14px" color="#FFFFFF" mr="20px">Incubated By</Text>
         <img
-          src="https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/babyswap+logo+black.png"
+          src="https://crypto-upload.s3.ap-southeast-1.amazonaws.com/cryptoyou/babyswap+logo+black.png"
           alt="alt"
           width="156px"
         />

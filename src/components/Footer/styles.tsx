@@ -5,7 +5,7 @@ import { Flex } from "../Box";
 export const StyledFooter = styled.div`
   background: ${darkColors.backgroundAlt};
   width: 100%;
-  padding-bottom: 34px;
+  padding-bottom: 64px;
   padding-top: 29px;
 
   ${({ theme }) => theme.mediaQueries.sm} {

@@ -47,7 +47,7 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <img
-      src="https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/TCY-logo+1.png"
+      src="https://crypto-upload.s3.ap-southeast-1.amazonaws.com/cryptoyou/TCY-logo+1.png"
       alt="alt"
       width="94px"
     />
