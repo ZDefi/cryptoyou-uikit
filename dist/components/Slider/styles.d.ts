@@ -3,7 +3,7 @@ interface SliderLabelProps {
     progress: string;
 }
 interface StyledInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    isMax: boolean;
+    isMax?: boolean;
 }
 interface DisabledProp {
     disabled?: boolean;

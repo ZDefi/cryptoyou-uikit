@@ -33,6 +33,7 @@ export declare type Gradients = {
     violetAlt: string;
     gold: string;
     orange: string;
+    slider: string;
 };
 export declare type Colors = {
     primary: string;

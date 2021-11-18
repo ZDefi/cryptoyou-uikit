@@ -46,6 +46,7 @@ export const lightColors: Colors = {
     violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     orange: "linear-gradient(180deg, #FE993B 0%, #FFC85D 100%)",
+    slider: "linear-gradient(90deg, #FFD69B 0%, #FFB751 100%)",
   },
 };
 
@@ -79,5 +80,6 @@ export const darkColors: Colors = {
     violetAlt: "linear-gradient(180deg, #434575 0%, #66578D 100%)",
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     orange: "linear-gradient(180deg, #FE993B 0%, #FFC85D 100%)",
+    slider: "linear-gradient(90deg, #FFD69B 0%, #FFB751 100%)",
   },
 };
