@@ -4477,7 +4477,7 @@ var BottomNav = function (_a) {
 };
 var templateObject_1$b, templateObject_2$8;
 
-var StyledFooter = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"], ["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 34px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"])), darkColors.backgroundAlt, function (_a) {
+var StyledFooter = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 64px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"], ["\n  background: ", ";\n  width: 100%;\n  padding-bottom: 64px;\n  padding-top: 29px;\n\n  ", " {\n    padding-bottom: 50px;\n    padding-top: 70px;\n  };\n"])), darkColors.backgroundAlt, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -4491,7 +4491,7 @@ var MenuItem = function () {
     return (React__default.createElement(StyledFooter, null,
         React__default.createElement(StyledIncubatedBy, null,
             React__default.createElement(Text, { fontSize: "14px", color: "#FFFFFF", mr: "20px" }, "Incubated By"),
-            React__default.createElement("img", { src: "https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/babyswap+logo+black.png", alt: "alt", width: "156px" })),
+            React__default.createElement("img", { src: "https://crypto-upload.s3.ap-southeast-1.amazonaws.com/cryptoyou/babyswap+logo+black.png", alt: "alt", width: "156px" })),
         React__default.createElement("div", { style: { width: '100%', textAlign: 'center' } },
             React__default.createElement(Text, { color: "#5C6577" }, "Copyright \u00A9 2021 thecryptoyou.io All Rights Reserved"))));
 };
@@ -4700,7 +4700,7 @@ var StyledLink = styled(Link$1)(templateObject_2$5 || (templateObject_2$5 = __ma
 var Logo = function (_a) {
     _a.isDark; var href = _a.href;
     var isAbsoluteUrl = href.startsWith("http");
-    var innerLogo = (React__default.createElement("img", { src: "https://baby-upload.s3.ap-southeast-1.amazonaws.com/images/cryptoyou/TCY-logo+1.png", alt: "alt", width: "94px" }));
+    var innerLogo = (React__default.createElement("img", { src: "https://crypto-upload.s3.ap-southeast-1.amazonaws.com/cryptoyou/TCY-logo+1.png", alt: "alt", width: "94px" }));
     return (React__default.createElement(Flex, null, isAbsoluteUrl ? (React__default.createElement(StyledLink, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default.createElement(StyledLink, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
 };
 var Logo$1 = React__default.memo(Logo, function (prev, next) { return prev.isDark === next.isDark; });
@@ -4851,7 +4851,7 @@ var Menu$1 = function (_a) {
                 React__default.createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 !isMobile && (React__default.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px", variant: "header" }))),
             React__default.createElement(Flex, { alignItems: "center" },
-                !isMobile && (React__default.createElement(Button, { as: "a", href: "https://exchange.babyswap.finance/#/swap", mr: "12px", variant: "secondary", scale: "sm", target: "_blank" }, "Buy $BABY")),
+                !isMobile && (React__default.createElement(Button, { as: "a", href: "https://exchange.babyswap.finance/#/swap?outputCurrency=0x53e562b9b7e5e94b81f10e96ee70ad06df3d2657", mr: "12px", variant: "secondary", scale: "sm", target: "_blank" }, "Buy $BABY")),
                 userMenu)),
         subLinks && (React__default.createElement(Flex, { justifyContent: "space-around" },
             React__default.createElement(SubMenuItems, { items: subLinksWithoutMobile, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem }),
