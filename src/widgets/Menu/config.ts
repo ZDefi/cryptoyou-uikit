@@ -33,7 +33,6 @@ export const links: MenuItemsType[] = [
   {
     label: 'Market',
     href: '/market',
-    showOnMobile: true,
   },
   {
     label: 'Liquidity Mining',
@@ -44,6 +43,9 @@ export const links: MenuItemsType[] = [
   {
     label: 'Game Wiki',
     href: 'https://docs.thecryptoyou.io',
+    as: 'a',
+    target: '_blank',
+    showOnMobile: true,
   },
 ];
 

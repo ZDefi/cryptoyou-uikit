@@ -122,7 +122,7 @@ const Menu: React.FC<NavProps> = ({
           {!isMobile && (
             <Button
               as="a"
-              href="https://exchange.babyswap.finance/#/swap"
+              href="https://exchange.babyswap.finance/#/swap?outputCurrency=0x53e562b9b7e5e94b81f10e96ee70ad06df3d2657"
               mr="12px"
               variant="secondary"
               scale="sm"

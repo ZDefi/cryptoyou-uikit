@@ -1,6 +1,6 @@
 {
   "name": "@cryptoyou/uikit",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "author": "zdefi",
   "keywords": [],
   "description": "Set of UI components for cryptoyou projects",
@@ -10,7 +10,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/ZDefi/cryptoyou-uikit.git",
+  "repository": "https://github.com/thecryptoyou/thecryptoyou-uikit.git",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
