@@ -10,7 +10,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/ZDefi/cryptoyou-uikit.git",
+  "repository": "https://github.com/thecryptoyou/thecryptoyou-uikit.git",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
