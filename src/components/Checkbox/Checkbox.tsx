@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { CheckboxProps, scales } from "./types";
 
-const getScale = ({ scale }: CheckboxProps) => {
+export const getScale = ({ scale }: CheckboxProps) => {
   switch (scale) {
+    case scales.XS:
+      return "20px";
     case scales.SM:
       return "24px";
     case scales.MD:
@@ -21,9 +23,9 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   width: ${getScale};
   vertical-align: middle;
   transition: background-color 0.2s ease-in-out;
-  border: 0;
+  border: ${({ border }) => border || 0};
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: ${({ theme, backgroundColor }) => backgroundColor || theme.colors.input};
   box-shadow: ${({ theme }) => theme.shadows.inset};
 
   &:after {
@@ -52,7 +54,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.success};
+    background-color: ${({ theme, checkedColor }) => checkedColor ? checkedColor : theme.colors.success};
     &:after {
       border-color: white;
     }
