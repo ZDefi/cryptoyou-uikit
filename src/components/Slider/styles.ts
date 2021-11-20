@@ -2,7 +2,6 @@ import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import bunnyHeadMain from "./svg/bunnyhead-main.svg";
-import bunnyHeadMax from "./svg/bunnyhead-max.svg";
 import bunnyButt from "./svg/bunnybutt.svg";
 
 interface SliderLabelProps {
@@ -10,7 +9,7 @@ interface SliderLabelProps {
 }
 
 interface StyledInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  isMax: boolean;
+  isMax?: boolean;
 }
 
 interface DisabledProp {
@@ -21,13 +20,15 @@ const getCursorStyle = ({ disabled = false }: DisabledProp) => {
   return disabled ? "not-allowed" : "cursor";
 };
 
-const getBaseThumbStyles = ({ isMax, disabled }: StyledInputProps) => `
+const getBaseThumbStyles = ({ disabled }: StyledInputProps) => `
   -webkit-appearance: none;
-  background-image: url(${isMax ? bunnyHeadMax : bunnyHeadMain});
+  background: url(${bunnyHeadMain}) no-repeat;
   background-color: transparent;
+  background-position: 0 15px;
+  background-size: 17px 17px;;
   border: 0;
   cursor: ${getCursorStyle};
-  width: 24px;
+  width: 17px;
   height: 32px;
   filter: ${disabled ? "grayscale(100%)" : "none"};
   transform: translate(-2px, -2px);
@@ -56,6 +57,7 @@ export const SliderLabel = styled(Text)<SliderLabelProps>`
 
 export const BunnyButt = styled.div<DisabledProp>`
   background: url(${bunnyButt}) no-repeat;
+  background-position: 0 15px;
   height: 32px;
   filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
   position: absolute;
@@ -95,7 +97,7 @@ export const BarBackground = styled.div<DisabledProp>`
 `;
 
 export const BarProgress = styled.div<DisabledProp>`
-  background-color: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.gradients.slider};
   filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
   height: 10px;
   position: absolute;

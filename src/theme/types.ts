@@ -38,6 +38,7 @@ export type Gradients = {
   violetAlt: string;
   gold: string;
   orange: string;
+  slider: string;
 };
 
 export type Colors = {
