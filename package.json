@@ -1,10 +1,6 @@
 {
   "name": "@cryptoyou/uikit",
-<<<<<<< HEAD
-  "version": "0.0.13",
-=======
   "version": "0.0.14",
->>>>>>> 3da43cb098d988c0fea6e5d16beb14665dbddb0a
   "author": "zdefi",
   "keywords": [],
   "description": "Set of UI components for cryptoyou projects",
