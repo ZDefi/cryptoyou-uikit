@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Checkbox from "./Checkbox";
 import {CheckboxGroup} from './CheckboxGroup';
 
@@ -8,7 +8,7 @@ export default {
   argTypes: {},
 };
 
-const options = [
+const defaultOptions = [
   {
       value: '1',
       label: '1',
@@ -20,6 +20,8 @@ const options = [
 ];
 
 export const Default: React.FC = () => {
+  const [value, onChange] = useState(['1', '11']);
+
   return (
     <>
       <div style={{ marginBottom: "32px" }}>
@@ -32,10 +34,12 @@ export const Default: React.FC = () => {
       <div>
         <CheckboxGroup
           scale="xs"
-          options={options}
+          options={defaultOptions}
           checkedColor="#131922"
           border="1px solid #1D2633"
           backgroundColor="#131922"
+          value={value}
+          onChange={onChange}
         />
       </div>
     </>

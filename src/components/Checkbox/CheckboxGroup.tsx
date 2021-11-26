@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback, useMemo} from 'react';
 import styled from 'styled-components';
 import { Flex } from '../Box';
 import Checkbox from './Checkbox';
@@ -26,6 +26,13 @@ const getScale = ({ scale }: CheckboxProps) => {
     }
 };
 
+const remove = (arr: string[], val: string) => { 
+    const curIndex = arr.indexOf(val);
+    if (curIndex > -1) {
+        arr.splice(curIndex, 1);
+    }
+};
+
 interface ILabelProps {
     scale?: Scales;
 }
@@ -36,20 +43,58 @@ const LabelContainer: FC<ILabelProps> = styled.div`
     font-size: ${getScale};
 `
 
+type IOptions = {label: string, value: string, checked?: boolean}[];
+
 type ICheckboxGroupProps = {
-    options: {label: string, value: string}[];
+    options: IOptions;
     labelColor?: string;
     itemWidth?: string;
+    value: string[];
+    onChange: (arr: string[]) => void; 
 } & CheckboxProps;
 
-export const CheckboxGroup: FC<ICheckboxGroupProps> = ({options, scale, labelColor, ...props}) => {
+export const CheckboxGroup: FC<ICheckboxGroupProps> = ({
+    options, scale, labelColor, onChange, value = [], ...props
+}) => {
+    const optionsIn = useMemo(
+        () => {
+            return options.map(i => ({
+                ...i,
+                checked: value.includes(i.value),
+            }));
+        },
+        [options, value]
+    );
+
     return (
         <CheckboxGroupContainer>
             {
-                options.map(i => {
+                optionsIn.map((i, index) => {
+                    const onClick = useCallback(
+                        (e: any) => {
+                            const checkedArr: string[] = [];
+                            optionsIn.map((o, oIndex) => {
+                                const isChecked = oIndex === index ? e.target.checked : o.checked;
+                                if (isChecked) {
+                                    checkedArr.push(o.value);
+                                } else {
+                                    remove(checkedArr, o.value);
+                                }
+                            });
+                            onChange(checkedArr);
+                        },
+                        [optionsIn, index]
+                    );
+
                     return (
                         <CheckboxContainer key={i.value} className="checkbox-item">
-                            <Checkbox name={i.value} scale={scale} {...props} />
+                            <Checkbox
+                                name={i.value}
+                                scale={scale}
+                                onClick={onClick}
+                                checked={i.checked}
+                                {...props}
+                            />
                             <LabelContainer
                                 scale={scale}
                             >
