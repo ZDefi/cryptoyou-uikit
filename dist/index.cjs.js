@@ -2110,12 +2110,34 @@ var getScale$3 = function (_a) {
             return "20px";
     }
 };
+var remove = function (arr, val) {
+    var curIndex = arr.indexOf(val);
+    if (curIndex > -1) {
+        arr.splice(curIndex, 1);
+    }
+};
 var LabelContainer = styled__default["default"].div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n    padding: 0 4px;\n    color: #fff;\n    font-size: ", ";\n"], ["\n    padding: 0 4px;\n    color: #fff;\n    font-size: ", ";\n"])), getScale$3);
 var CheckboxGroup = function (_a) {
-    var options = _a.options, scale = _a.scale; _a.labelColor; var props = __rest(_a, ["options", "scale", "labelColor"]);
-    return (React__default["default"].createElement(CheckboxGroupContainer, null, options.map(function (i) {
+    var options = _a.options, scale = _a.scale; _a.labelColor; var onChange = _a.onChange, _b = _a.value, value = _b === void 0 ? [] : _b, props = __rest(_a, ["options", "scale", "labelColor", "onChange", "value"]);
+    var optionsIn = React.useMemo(function () {
+        return options.map(function (i) { return (__assign(__assign({}, i), { checked: value.includes(i.value) })); });
+    }, [options, value]);
+    return (React__default["default"].createElement(CheckboxGroupContainer, null, optionsIn.map(function (i, index) {
+        var onClick = React.useCallback(function (e) {
+            var checkedArr = [];
+            optionsIn.map(function (o, oIndex) {
+                var isChecked = oIndex === index ? e.target.checked : o.checked;
+                if (isChecked) {
+                    checkedArr.push(o.value);
+                }
+                else {
+                    remove(checkedArr, o.value);
+                }
+            });
+            onChange(checkedArr);
+        }, [optionsIn, index]);
         return (React__default["default"].createElement(CheckboxContainer, { key: i.value, className: "checkbox-item" },
-            React__default["default"].createElement(Checkbox, __assign({ name: i.value, scale: scale }, props)),
+            React__default["default"].createElement(Checkbox, __assign({ name: i.value, scale: scale, onClick: onClick, checked: i.checked }, props)),
             React__default["default"].createElement(LabelContainer, { scale: scale }, i.label)));
     })));
 };

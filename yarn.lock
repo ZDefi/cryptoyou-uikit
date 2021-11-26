@@ -1421,6 +1421,21 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@huse/boolean@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@huse/boolean/-/boolean-1.1.2.tgz#bc761d5a98b11af53fee940c384073f1de29cc89"
+  integrity sha512-WeTJpS6AqZ1+N6hqTQSYiRT4yMDfsUzshBCzVXE9b1rbPsWIaHOxcBbP5XYDrtSqZN2iLwFJ/0DiQQQUjFKbuA==
+  dependencies:
+    "@huse/methods" "^1.2.2"
+
+"@huse/methods@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@huse/methods/-/methods-1.2.2.tgz#5b381da5898609758139bcba9bba6d5fe23854c9"
+  integrity sha512-8b8cw0uabwNiQny4ebTIsE7mu8JnPOJZqCeEeW15MZaU3d3GdODrb+nB+45fi0BFzr7asc0wVpgR5/jNu1vmfg==
+  dependencies:
+    immer "^9.0.5"
+    use-immer "^0.6.0"
+
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
@@ -8415,6 +8430,11 @@ immer@8.0.1:
   resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
   integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
 
+immer@^9.0.5:
+  version "9.0.7"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.7.tgz#b6156bd7db55db7abc73fd2fdadf4e579a701075"
+  integrity sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==
+
 import-fresh@^3.0.0, import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
@@ -14194,6 +14214,11 @@ use-composed-ref@^1.0.0:
   integrity sha512-my1lNHGWsSDAhhVAT4MKs6IjBUtG6ZG11uUqexPH9PptiIZDQOzaF4f5tEbJ2+7qvNbtXNBbU3SfmN+fXlWDhg==
   dependencies:
     ts-essentials "^2.0.3"
+
+use-immer@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/use-immer/-/use-immer-0.6.0.tgz#ca6aa5ade93018e2c65cf128d19ada54fc23f70d"
+  integrity sha512-dFGRfvWCqPDTOt/S431ETYTg6+uxbpb7A1pptufwXVzGJY3RlXr38+3wyLNpc6SbbmAKjWl6+EP6uW74fkEsXQ==
 
 use-isomorphic-layout-effect@^1.0.0:
   version "1.1.1"
